@@ -7,23 +7,27 @@
 </head>
 <body>
     <h1>FizzBuzz Game!</h1>
-    <ul id="outputList"></ul>
+    <ol id="outputList"></ol>
 
     <script>
         let answer = prompt("Enter a Number for FizzBuzz Game: ");
-        let outputList = document.getElementById("output");
+        let outputList = document.getElementById("outputList");
 
         function FizzBuzz(answer){
-            for (i = 1;i <= answer;i++){
+            for (let i = 1;i <= answer;i++){
+                let listItem = document.createElement("li");
+
                 if(i % 3 === 0 && i % 5 === 0){
-                    console.log("FizzBuzz")
+                    listItem.textContent = "FizzBuzz";
                 }else if(i % 3 == 0){
-                    console.log("Fizz");
+                     listItem.textContent = "Fizz";
                 }else if(i % 5 ==0){
-                    console.log("Buzz");
+                     listItem.textContent = "Buzz";
                 }else{
-                    console.log(i);
+                    listItem.textContent = i;
                 }
+
+                outputList.appendChild(listItem);
             }
         }
 
